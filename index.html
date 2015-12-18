@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Neighborhood Map</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="container_layout">
+            <!--  Google map -->
+            <div id="map_container">
+                <div id="map-canvas" class="map_canvas"></div>
+                <div class="infobox-wrapper">
+                    <div class="infobox"></div>
+                </div>
+            </div>
+            <!--  Search bar -->
+            <div id="search-container">
+                <!-- Search Bar knockout binding -->
+                <div class="search_layout">
+                    <!-- display or hide search list -->
+                    <button id="toggle-button" type="button" data-bind ="click : toggleList"> ToggleList Display</button>
+                    <form id="search" data-bind="submit: searchFun">
+                        <input class="search-bar" placeholder=" search" type="search" data-bind="textInput: searchStr">
+                        <input class="search-bar" type="submit" value="search" >
+                    </form>
+                </div>
+                <div data-bind = "style : { display : toggleListBoolean() ? 'block' : 'none' }">
+                    <!-- Templated list binding -->
+                    <ul data-bind="foreach: pins">
+                        <li class="list-item"><a href="#"><span data-bind="click: clickForInfoBox, text: name"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBZKsPPRz0np3ygFGD6lc-rSTO_DH_uNeg"></script>
+        <script src="js/libraries/jquery-1.11.3.min.js"></script>
+        <script src="js/libraries/knockout-3.3.0.min.js"></script>
+        <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

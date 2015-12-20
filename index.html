@@ -21,13 +21,13 @@
                 <!-- Search Bar knockout binding -->
                 <div class="search_layout">
                     <!-- display or hide search list -->
-                    <button id="toggle-button" type="button" data-bind ="click : toggleList"> ToggleList Display</button>
-                    <form id="search" data-bind="submit: searchFun">
+                    <button id="toggle-button" type="button" data-bind="click : toggleList"> ToggleList Display</button>
+                    <form id="search" data-bind="submit: searchFunc">
                         <input class="search-bar" placeholder=" search" type="search" data-bind="textInput: searchStr">
                         <input class="search-bar" type="submit" value="search" >
                     </form>
                 </div>
-                <div data-bind = "style : { display : toggleListBoolean() ? 'block' : 'none' }">
+                <div data-bind="style : { display : toggleListBoolean() ? 'block' : 'none' }">
                     <!-- Templated list binding -->
                     <ul data-bind="foreach: pins">
                         <li class="list-item"><a href="#"><span data-bind="click: clickForInfoBox, text: name"></span></a></li>
@@ -36,10 +36,10 @@
             </div>
         </div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBZKsPPRz0np3ygFGD6lc-rSTO_DH_uNeg"></script>
         <script src="js/libraries/jquery-1.11.3.min.js"></script>
         <script src="js/libraries/knockout-3.3.0.min.js"></script>
-        <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+        <script src="js/libraries/infobox.js"></script>
         <script src="js/app.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBZKsPPRz0np3ygFGD6lc-rSTO_DH_uNeg&callback=initMap"></script>
     </body>
 </html>

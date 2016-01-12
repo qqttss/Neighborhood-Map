@@ -1,6 +1,6 @@
 Neighborhood-Map:
 
-A single page application was developed using Javascript framework (knockout.js) and the third-party APIs. The website is a full-page map that loads with popular sites in New York City.
+A single-page application was developed using Javascript framework (knockout.js) and the third-party APIs. The website is a full-page map that loads with popular sites in New York City.
 
 This project is hosted at: http://qqttss.github.io/Neighborhood-Map/
 
